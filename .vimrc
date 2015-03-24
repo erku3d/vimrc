@@ -77,8 +77,8 @@ set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = "," 
+let mapleader=","
+let g:mapleader="," 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -94,6 +94,12 @@ set wildignore=*.o,*~,*.pyc
 
 "Always show current position
 set ruler
+
+"show line numbers
+set number
+
+"highlight current line
+set cursorline
 
 " Height of the command bar
 set cmdheight=2
@@ -114,8 +120,11 @@ set smartcase
 " Highlight search results
 set hlsearch
 
-" Makes search act like search in modern browsers
+" search as characters are entered
 set incsearch
+
+"turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -128,6 +137,22 @@ set showmatch
 
 " How many tenths of a second to blink when matching brackets
 set mat=2
+
+"enable folding
+set foldenable
+
+"open most folds by default
+set foldlevelstart=10
+
+"10 nested fold max
+set foldnestmax=10
+
+" mapping for open/close folds
+"nnoremap <space> za
+
+"fold based on indent (also possible: marker, manula, syntax, diff)
+set foldmethod=indent "ideal for python
+
 
 " No annoying sound on errors
 "set noerrorbells
