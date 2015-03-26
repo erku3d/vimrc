@@ -1,4 +1,3 @@
-
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -33,15 +32,27 @@ Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
+"Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
-Plugin 'user/L9', {'name': 'newL9'}
+"Plugin 'user/L9', {'name': 'newL9'}
 
 "SOLARIZED COLORSCHEME 
 Plugin 'git://github.com/altercation/vim-colors-solarized.git'
+
+"snipmate snipets
+Plugin 'git://github.com/msanders/snipmate.vim'
+
+"vim-sourround Plugin
+Plugin 'git://github.com/tpope/vim-surround'
+
+"NERD Tree - explore the file system 
+Plugin 'git://github.com/scrooloose/nerdtree'
+
+"vim latex suite
+Plugin 'gerw/vim-latex-suite'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,6 +90,8 @@ set autoread
 " like <leader>w saves the current file
 let mapleader=","
 let g:mapleader="," 
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -389,6 +402,21 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"set filetype for empty .tex files to 'tex' instead of 'plaintext' -> vim-latex is loaded
+let g:tex_flavor='latex'
+
+
+"set grep to always generate a filename
+set grepprg=grep\ -nH\ $*
+
+"set : as keyword
+set iskeyword+=:
 
 
 
